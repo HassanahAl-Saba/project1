@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main %}
+{% include 'flashes.html' %}
+
+<div class="page-header">
+    <h1 >Your Selected Property</h1>
+
+</div>
+
+
+<div class = 'prop'>
+    <img class ='inv_img' src = "{{ url_for('getimage', filename= prop.photo) }}" alt ="Photo">
+    <div class = "body-description">
+        <div class = "property-title">{{prop.title}}</div>
+        <div class = "price-type">
+            <div class = "property-price">{{prop.price}}</div>
+            <div class = "property-type">{{prop.type}}</div>
+        </div>
+        <div class = "desc">{{prop.description}}</div>
+        <div class = "bed-bath">
+            <div class = "bedroom">{{prop.bedroom}} Bedrooms</div>
+            <div class = "bathroom">{{prop.bathroom}} Bathrooms</div>
+        </div>
+        <div class = "location">{{prop.location}}</div>
+        <button class="btn" type="submit">Email Realtor</button>
+    </div>
+</div>
+{% endblock %}
